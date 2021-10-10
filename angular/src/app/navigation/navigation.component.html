@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <a mat-button [routerLink]="['/']">Име на сайта</a>
+
+  <ng-template ngFor let-link="$implicit" [ngForOf]="links">
+    <a mat-button [routerLink]="link.path" [routerLinkActive]="['mat-button-toggle-checked', 'active-route']" #rla="routerLinkActive">
+      {{ link.label }}
+    </a>
+  </ng-template>
+
+  <span class="spacer"></span>
+
+  <button mat-button class="logout" aria-label="Logout" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    Изход
+  </button>
+</mat-toolbar>

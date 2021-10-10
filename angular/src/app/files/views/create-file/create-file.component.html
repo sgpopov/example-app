@@ -1,0 +1,28 @@
+<section class="section">
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <mat-card>
+      <mat-card-title> Създаване на нов документ </mat-card-title>
+
+      <mat-card-content>
+        <div class="row">
+          <mat-form-field [floatLabel]="options.value.floatLabel">
+            <mat-label>Поле 1</mat-label>
+            <input matInput formControlName="field1" required />
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field [floatLabel]="options.value.floatLabel">
+            <mat-label>Поле 2</mat-label>
+            <input matInput formControlName="field2" required />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button type="button" mat-button (click)="cancel()">Отказване</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!form.valid">Запазване</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</section>
